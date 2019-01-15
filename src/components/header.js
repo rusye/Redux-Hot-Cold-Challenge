@@ -7,11 +7,14 @@ import './header.css';
 export default function Header(props) {
   return (
     <header>
-      <TopNav
-        onGenerateAuralUpdate={() => props.onGenerateAuralUpdate()}
-        onRestartGame={() => props.onRestartGame()}
-      />
+      <TopNav />
+      {/* // Removed all this stuff
+      //   onGenerateAuralUpdate={() => props.onGenerateAuralUpdate()}
+      //   onRestartGame={() => props.onRestartGame()}
+      // /> */}
       <h1>HOT or COLD</h1>
     </header>
   );
 }
+
+// Why don't we require connect?

@@ -1,6 +1,8 @@
 import React from 'react';
+// Added connect for the props state
+import {connect} from 'react-redux';
 
-export default function AuralStatus(props) {
+export function AuralStatus(props) {
   return (
     <p
       id="status-readout"
@@ -12,3 +14,11 @@ export default function AuralStatus(props) {
     </p>
   );
 }
+
+// So basically we are setting the state directly in here.
+const mapStateToProps = state => ({
+  auralStatus: state.auralStatus
+});
+
+// Then exporting the props
+export default connect(mapStateToProps)(AuralStatus);
