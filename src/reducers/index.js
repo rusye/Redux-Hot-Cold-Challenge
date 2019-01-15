@@ -1,7 +1,8 @@
-import {MAKE_GUESS} from '../actions';
+import {MAKE_GUESS, RESTART_GAME} from '../actions';
 
 const initialState = {
-  guesses: []
+  guesses: [],
+  correctAnswer: ''
 };
 
 export const hotColdReducer = (state=initialState, action) => {
@@ -9,6 +10,12 @@ export const hotColdReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       guesses: action.guesses
     });
+  }
+
+  else if (action.type === RESTART_GAME) {
+    return Object.assign({}, state, {
+      correctAnswer: action.correctAnswer
+    })
   }
 
   return state;
