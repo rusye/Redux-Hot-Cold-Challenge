@@ -4,4 +4,12 @@ const initialState = {
   guesses: []
 };
 
-export const hotColdReducer = (state=initialState, action) => {};
+export const hotColdReducer = (state=initialState, action) => {
+  if (action.type === MAKE_GUESS) {
+    return Object.assign({}, state, {
+      guesses: action.guesses
+    });
+  }
+
+  return state;
+};
